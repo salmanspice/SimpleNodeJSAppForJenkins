@@ -6,6 +6,10 @@ app.get('/', (req,res) => {
   res.send("Do or do not there is no try !! This is added");
 });
 
+app.get('/home', (req, res) => {
+  res.send("Do or Do Not There isn't is no TRY Home Page");
+});
+
 const server = app.listen(3000, ()=>{
   const host = server.address().address;
   const port = server.address().port;
