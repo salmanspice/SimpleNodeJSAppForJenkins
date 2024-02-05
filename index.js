@@ -1,18 +1,11 @@
-const express = require('express');
-const app = express();
-
-
-app.get('/', (req,res) => {
-  res.send("Do or do not there is no try !! This is added");
+const http = require('node:http');
+const hostname = '10.20.99.21';
+const port = 3000;
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
 });
-
-app.get('/home', (req, res) => {
-  res.send("Do or Do Not There isn't is no TRY Home Page");
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
-
-const server = app.listen(3000, ()=>{
-  const host = server.address().address;
-  const port = server.address().port;
-
-  console.log('Example application is currently listening on port 3000 and at http://%s:%s', host, port);
-})
