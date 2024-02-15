@@ -47,19 +47,19 @@ pipeline {
     //     }
     // }
 
-    stage('Copy Artifact from Spring MVC project') {
-        steps {
+  // stage('Copy Artifact from Spring MVC project') {
+       // steps {
             
-           echo "The build number is ${env.BUILD}"
+           //echo "The build number is ${env.BUILD}"
             
-            copyArtifacts(
-                filter: "**/*.js",
-                projectName: "Rollback",
-                fingerprintArtifacts: true,
-                selector: buildParameter('BUILD')
-            )
-        }
-    }
+            //copyArtifacts(
+            //    filter: "**/*.js",
+            //    projectName: "Rollback",
+            //    fingerprintArtifacts: true,
+             //   selector: buildParameter('BUILD')
+          //  )
+      //  }
+  // }
           stage('deploy dev enviornment'){
             // when {
             //     branch 'dev'
